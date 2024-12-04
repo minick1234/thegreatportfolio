@@ -1,11 +1,9 @@
 ﻿import React from 'react';
 
-function Atmosphere() {
+export const CityScape = () => {
     return (
-        <div className="h-screen w-full bg-purple-500 flex items-center justify-center">
+        <div className="h-screen w-full flex items-center justify-center cityscape">
             <h1 className="text-white text-4xl">CityScape</h1>
         </div>
     );
 }
-
-export default Atmosphere;

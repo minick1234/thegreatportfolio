@@ -1,5 +1,4 @@
-﻿import React from 'react';
-import {motion,} from 'framer-motion';
+﻿import {motion,} from 'framer-motion';
 import {ContainerStagger} from "../Utilities/MotionUtils";
 import {styles} from '../styles';
 
@@ -17,6 +16,10 @@ const StarWrapper = (Component, componentIdName) => {
                 viewport={{once: true, amount: 0.25}}
                 className={`${styles.padding} max-w-7x1 mx-auto relative z-0`}>
 
+                <span className='hash-span' id={componentIdName}>
+                    &nbsp;
+                </span>
+                
                 <Component {...props}/>
             </motion.section>
         );

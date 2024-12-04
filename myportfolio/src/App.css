@@ -1,0 +1,29 @@
+/* Space */
+.space {
+    background: linear-gradient(to bottom, #000000 86%, #050A60 100%);
+    position: relative;
+}
+
+/* Atmosphere */
+.atmosphere {
+    background: linear-gradient(to bottom, #050A60, #3A65A9);
+    height: 100vh;
+}
+
+/* Sky */
+.sky {
+    background: linear-gradient(to bottom, #3A65A9, #87CEEB);
+    height: 100vh;
+}
+
+/* Cityscape */
+.cityscape {
+    background: linear-gradient(to bottom, #87CEEB, #87CEEB);
+    height: 100vh;
+}
+
+/* Ground */
+.ground {
+    background: linear-gradient(to bottom, #87CEEB, #FFA500 94.71%);
+    height: 100vh;
+}

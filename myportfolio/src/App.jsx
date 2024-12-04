@@ -1,23 +1,31 @@
-import React from 'react';
-import EarthCanvas from './Components/Earth.jsx';
-import Atmosphere from './Components/Atmosphere';
-import Clouds from './Components/Clouds';
-import CityScape from './Components/CityScape';
-import Ground from './Components/Ground';
+import React, {useState, useRef} from 'react';
+import {Canvas, useFrame} from "@react-three/fiber";
+import {Html} from "@react-three/drei"
+
+import {BrowserRouter} from 'react-router-dom';
+
+import {
+    EarthCanvas, Atmosphere, Sky, CityScape, Ground
+} from './Components/';
+
 import './App.css';
 import './index.css';
 
 function App() {
     return (
-        <div className="App">
-            <div className="h-screen w-full bg-black">
-                <EarthCanvas/>
+        <browserRouter>
+            <div className="App">
+                <div className="h-screen w-full">
+                    {/*<EarthCanvas />*/}
+                </div>
+                <div>
+                    <Atmosphere/>
+                    <Sky/>
+                    <CityScape/>
+                    <Ground/>
+                </div>
             </div>
-            <Atmosphere/>
-            <Clouds/>
-            <CityScape/>
-            <Ground/>
-        </div>
+        </browserRouter>
     );
 }
 
