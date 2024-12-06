@@ -84,7 +84,7 @@ export const fadeIn = (direction, type, delay, duration) => {
 //Fill this one out!
 export const FadeOut = () => {}
 
-export const StaggerContainer = (staggerChildren, delayChildren) => {
+export const staggerContainer = (staggerChildren, delayChildren) => {
     return {
         hidden:{},
         show:{

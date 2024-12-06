@@ -4,28 +4,25 @@ import {Html} from "@react-three/drei"
 
 import {BrowserRouter} from 'react-router-dom';
 
-import {
-    EarthCanvas, Atmosphere, Sky, CityScape, Ground
-} from './Components/';
+import Atmosphere from "./Components/Atmosphere.jsx";
+//import Earth from "./Components/Earth.jsx";
+import Ground from "./Components/Ground.jsx";
+import Sky from "./Components/Sky.jsx"; 
+import CityScape from "./Components/CityScape.jsx";
 
 import './App.css';
 import './index.css';
 
 function App() {
     return (
-        <browserRouter>
             <div className="App">
-                <div className="h-screen w-full">
-                    {/*<EarthCanvas />*/}
-                </div>
-                <div>
+                <div className="flex flex-col">
                     <Atmosphere/>
                     <Sky/>
                     <CityScape/>
                     <Ground/>
                 </div>
             </div>
-        </browserRouter>
     );
 }
 

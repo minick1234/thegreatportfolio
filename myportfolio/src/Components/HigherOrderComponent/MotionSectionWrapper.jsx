@@ -1,34 +1,30 @@
 ﻿import {motion,} from 'framer-motion';
-import {ContainerStagger} from "../Utilities/MotionUtils";
-import {styles} from '../styles';
+import {staggerContainer} from "../../Utilities/MotionUtils.js";
 
 // eslint-disable-next-line react/display-name
 //This just simplifies this as we dont need to have a display name
 //the display name just helps with debugging to assign a display name 
 // its as simple as chaning it to be const StarWrapper = (Component, componentIdName) => HOC(props) => {
-const StarWrapper = (Component, componentIdName) => {
+const StarWrapper = (Component, componentIdName, customClassName) => {
     const WrappedComponent = (props) => {
         return (
             <motion.section
-                variants={ContainerStagger()}
-                initial='hidden'
-                whileInView='show'
-                viewport={{once: true, amount: 0.25}}
-                className={`${styles.padding} max-w-7x1 mx-auto relative z-0`}>
-
-                <span className='hash-span' id={componentIdName}>
-                    &nbsp;
-                </span>
-                
-                <Component {...props}/>
+                variants={staggerContainer()}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.25 }}
+                className={`relative w-full ${customClassName}`}
+                style={{minHeight: '75vh'}}
+            >
+                <Component {...props} />
             </motion.section>
         );
     };
 
-    WrappedComponent.displayName = `StarWrapper(${Component.displayName || Component.name || 'Component'})`
+    WrappedComponent.displayName = `StarWrapper(${Component.displayName || Component.name || 'Component'})`;
 
     return WrappedComponent;
-
 };
+
 
 export default StarWrapper;

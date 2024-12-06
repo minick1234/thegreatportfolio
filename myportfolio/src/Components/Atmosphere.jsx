@@ -1,25 +1,28 @@
 ﻿import React from 'react';
-import { Canvas } from '@react-three/fiber';
-import { Stars } from '@react-three/drei';
+import ScalingStars from './ScalingStars';
+import MotionSectionWrapper from './HigherOrderComponent/MotionSectionWrapper.jsx';
 
-export const Atmosphere = () => {
+const Atmosphere = () => {
     return (
-        <div
-            className="h-screen w-full, atmosphere"
-        >
-            <Canvas>
-                <ambientLight intensity={0.3} />
-                {/* Stars in the upper part of the atmosphere */}
-                <Stars
-                    radius={100}       // Size of the starfield sphere
-                    depth={20}         // Confine stars to a shallow depth
-                    count={1000}       // Reduce the number of stars for density
-                    factor={4}         // Size multiplier for stars
-                    saturation={0}     // No saturation for a neutral look
-                    fade               // Fade effect near edges
-                    position={[0, 25, 0]} // Move stars higher in the scene
-                />
-            </Canvas>
+        <div className="relative w-full">
+            <ScalingStars density={0.02} baseStars={500} />
+
+            <div className="relative z-10 flex flex-col items-center w-full min-h-screen">
+                <div className="flex flex-col items-center justify-center w-full">
+                    <div className="py-8">
+                        {Array.from({ length: 1 }).map((_, idx) => (
+                            <React.Fragment key={idx}>
+                                <h1 className="text-white text-4xl">Atmosphere</h1>
+                                <p className="text-white text-lg mt-4">
+                                    This is some additional content to test the height of the motion section.
+                                </p>
+                            </React.Fragment>
+                        ))}
+                    </div>
+                </div>
+            </div>
         </div>
     );
-}
+};
+
+export default MotionSectionWrapper(Atmosphere, "atmosphere", "atmosphere");
