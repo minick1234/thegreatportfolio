@@ -1,25 +1,84 @@
-/* Space */
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Space Section */
 .space {
-    background: linear-gradient(to bottom, #000000 86%, #050A60 100%);
+    background: linear-gradient(to bottom, #000000 100%, #050a63 0%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+/* Atmosphere Section */
+.atmosphere {
+    background: linear-gradient(to bottom, #000000 0%, #050a63 75%);
+    min-height: 100vh;
+}
+
+/* Sky Section */
+.sky {
+    background: linear-gradient(to bottom, #050a63 0%, #ADD8E6 100%);
+    min-height: 100vh;
+}
+
+/* Cityscape Section */
+.cityscape {
+    background: linear-gradient(to bottom, #ADD8E6 85%, #87CEEB 100%);
+    min-height: 100vh;
     position: relative;
 }
 
-/* Atmosphere */
-.atmosphere {
-    background: linear-gradient(to bottom, #050A60, #3A65A9);
+/* Adding a City Silhouette */
+.cityscape::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: url('cityscape-silhouette.png') repeat-x; /* Replace with your silhouette image */
+    background-size: cover;
 }
 
-/* Sky */
-.sky {
-    background: linear-gradient(to bottom, #3A65A9, #87CEEB);
-}
-
-/* Cityscape */
-.cityscape {
-    background: linear-gradient(to bottom, #87CEEB, #87CEEB);
-}
-
-/* Ground */
+/* Ground Section */
 .ground {
-    background: linear-gradient(to bottom, #87CEEB, #FFA500 94.71%);
+    background: linear-gradient(to bottom, #87CEEB 85%, #FFA500 100%);
+    min-height: 100vh;
+}
+
+/* Text Styling */
+.text {
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.dud {
+    color: rgba(255, 255, 255, 0.3); /* Light color for scrambled characters */
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .text {
+        font-size: 2rem;
+    }
+}
+
+/* Section Transitions */
+section {
+    scroll-snap-align: start; /* Snap to sections */
+    transition: background 0.5s ease-in-out; /* Smooth transition between sections */
 }

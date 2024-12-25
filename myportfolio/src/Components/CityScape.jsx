@@ -10,7 +10,7 @@ const CityScape = () => {
             <div className="relative z-10 flex flex-col items-center w-full min-h-screen">
                 <div className="flex flex-col items-center justify-center w-full">
                     <div className="py-8">
-                        {Array.from({ length: 50 }).map((_, idx) => (
+                        {Array.from({ length: 10 }).map((_, idx) => (
                             <React.Fragment key={idx}>
                                 <h1 className="text-white text-4xl">CityScape</h1>
                                 <p className="text-white text-lg mt-4">

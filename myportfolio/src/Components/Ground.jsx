@@ -8,15 +8,24 @@ const Ground = () => {
         <div className="relative w-full">
             <div className="relative z-10 flex flex-col items-center w-full min-h-screen">
                 <div className="flex flex-col items-center justify-center w-full">
-                    <div className="py-8">
-                        {Array.from({ length: 50 }).map((_, idx) => (
-                            <React.Fragment key={idx}>
-                                <h1 className="text-white text-4xl">Ground</h1>
-                                <p className="text-white text-lg mt-4">
-                                    This is some additional content to test the height of the motion section.
-                                </p>
-                            </React.Fragment>
-                        ))}
+                    <div>
+                        <p>Shoot Me A Message</p>
+                        <h1>Contact</h1>
+                        <form>
+                            <label>
+                                <span>Your Name</span>
+                                <input type="text" name="name" placeholder="What's your name?" value/>
+                            </label>
+                            <label>
+                                <span>Your Email</span>
+                                <input type="text" name="email" placeholder="What's your email?" value/>
+                            </label>
+                            <label>
+                                <span>Your Message</span>
+                                <input type="text" name="message" placeholder="What would you like to say?" value/>
+                            </label>
+                        </form>
+
                     </div>
                 </div>
             </div>
